@@ -6,12 +6,12 @@ require_relative "download_strategy"
 class Optishell < Formula
   desc ""
   homepage "https://github.com/Optibus/homebrew-tap"
-  version "0.0.6"
+  version "0.1.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/Optibus/optishell/releases/download/v0.0.6/optishell_Darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "841b0df8fbdea2b445c43af7d0edce5f9c5db43bd0bf191cbddf9570c1126f68"
+      url "https://github.com/Optibus/optishell/releases/download/v0.1.0/optishell_Darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "8f27d808f977fced3f39b850364d73600a7190f502632f9e364bb315b1e14e97"
 
       def install
         bin.install "optishell"
@@ -22,8 +22,8 @@ class Optishell < Formula
   on_linux do
     if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/Optibus/optishell/releases/download/v0.0.6/optishell_Linux_x86_64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-        sha256 "0a05198b6c9eacd267d8f39056c44c894cac119566caac463d4bf14f1a4251b8"
+        url "https://github.com/Optibus/optishell/releases/download/v0.1.0/optishell_Linux_x86_64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+        sha256 "2b18e245d071296f2be48d6959036ccd0a0f54eb33a09561abcb7494a5029870"
 
         def install
           bin.install "optishell"
@@ -32,8 +32,8 @@ class Optishell < Formula
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/Optibus/optishell/releases/download/v0.0.6/optishell_Linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-        sha256 "dcb6effc6568fb6cb67aaf9e2e685f12614b1a952275f154f99d0213795e0829"
+        url "https://github.com/Optibus/optishell/releases/download/v0.1.0/optishell_Linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+        sha256 "22ae255116b1cb4d3d49fc510139e314198c75a0b42a81a0e38f3a0d571f0618"
 
         def install
           bin.install "optishell"
