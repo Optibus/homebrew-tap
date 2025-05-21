@@ -6,12 +6,12 @@ require_relative "download_strategy"
 class Optishell < Formula
   desc ""
   homepage "https://github.com/Optibus/homebrew-tap"
-  version "0.1.2"
+  version "0.2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/Optibus/optishell/releases/download/v0.1.2/optishell_Darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "7ca183b62b42a710cc91aafa5509d85b80842d3c933bde8be7db203776e94007"
+      url "https://github.com/Optibus/optishell/releases/download/v0.2.0/optishell_Darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "9da600c44d433988aecff092e5c2200c677cee667f636519146c0ffa19ea0839"
 
       def install
         bin.install "optishell"
@@ -20,24 +20,18 @@ class Optishell < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/Optibus/optishell/releases/download/v0.1.2/optishell_Linux_x86_64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-        sha256 "f2c50ee7b71f16a952d70759a299164c5c3288a6254453414edb78adb2be426f"
-
-        def install
-          bin.install "optishell"
-        end
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://github.com/Optibus/optishell/releases/download/v0.2.0/optishell_Linux_x86_64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "b3c3ac68dc02f5d0b0e40eef053c26f2e01c479b3041748a16f3968993d7c2ec"
+      def install
+        bin.install "optishell"
       end
     end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/Optibus/optishell/releases/download/v0.1.2/optishell_Linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-        sha256 "c0ef2f750b00d50ae8e315248753c9ea60de555ecebc5a7d4488c4b364923de9"
-
-        def install
-          bin.install "optishell"
-        end
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/Optibus/optishell/releases/download/v0.2.0/optishell_Linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "7f545a1c305652786ce006f288aa218e518321d2bdc6c5aacf867e5eb3efa26b"
+      def install
+        bin.install "optishell"
       end
     end
   end
